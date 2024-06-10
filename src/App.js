@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
+import Navigation from './pages/Navigation';
 
-function App() {
+import About from './pages/About';
+import Experience from './pages/Experience';
+import History from './pages/History';
+import Projects from './pages/Projects';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+       <Navigation />
+       <Row>
+           <Col md={{span:9, offset:3}}>
+              <About />
+              <Experience />
+              <History />
+              <Projects />
+           </Col>
+       </Row>
+    </Container>  
+  )
 }
-
-export default App;
+export default App
